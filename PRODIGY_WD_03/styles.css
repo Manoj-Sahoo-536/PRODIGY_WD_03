@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    background-color: #1e1e1e; /* Dark container */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(128, 0, 128, 0.5); /* Purple shadow */
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #9c27b0; /* Purple heading */
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(156, 39, 176, 0.5);
+}
+
+.game-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #6a1b9a; /* Dark purple */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: all 0.3s;
+    box-shadow: 0 0 5px rgba(156, 39, 176, 0.5);
+}
+
+button:hover {
+    background-color: #9c27b0; /* Lighter purple on hover */
+    transform: translateY(-2px);
+}
+
+#reset-game {
+    margin-top: 20px;
+    background-color: #4a148c; /* Darker purple */
+}
+
+#reset-game:hover {
+    background-color: #7b1fa2; /* Medium purple on hover */
+}
+
+.game-info {
+    margin-bottom: 20px;
+}
+
+#status-message, #turn-indicator {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #e1bee7; /* Light purple text */
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.cell {
+    background-color: #2d2d2d; /* Dark gray cells */
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    height: 90px;
+    transition: all 0.3s;
+    border: 1px solid #3d3d3d;
+}
+
+.cell:hover {
+    background-color: #3d3d3d; /* Slightly lighter on hover */
+    box-shadow: 0 0 8px rgba(156, 39, 176, 0.7);
+}
+
+.cell.x {
+    color: #ce93d8; /* Light purple for X */
+}
+
+.cell.o {
+    color: #9575cd; /* Different purple shade for O */
+}
+
+.cell.winner {
+    background-color: #4a148c; /* Dark purple for winners */
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(156, 39, 176, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(156, 39, 176, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(156, 39, 176, 0); }
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
